@@ -1,0 +1,84 @@
+/* Retngulo-1 {
+    width: 516px;
+    height: 353px;
+    margin: 40px 425px 56px;
+    padding: 24px;
+    border-radius: 3px;
+    border: solid 1px #3b3b3b;
+    background-color: #313131;
+  } */
+
+
+  .commentForm {
+    width: 516px;
+    height: 353px;
+    margin: 40px 570px 56px;
+    padding: 24px;
+    border-radius: 3px;
+    border: solid 1px #3b3b3b;
+    background-color: #313131;
+    right: 200px;
+    
+}
+
+.commentForm > strong {
+    line-height: 1.6;
+    color: var(--gray-100);
+}
+
+.commentForm textarea {
+    /* width: 468px;
+    background-color: #494949;
+    border: 0;
+    resize: none;
+    height: 54px;
+    padding: 1rem;
+    border-radius: px;
+    color: var(--gray-100);
+    line-height: 1.4;
+    margin-top: 1rem;
+    margin: 16px 0 8px; */
+
+    width: 468px;
+    height: 40px;
+    margin: 16px 0 8px;
+    padding: 5px 205px 0px 17px;
+    border-radius: 8px;
+    background-color: #494949;
+
+}
+
+.commentForm button[type=submit] {
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--purple-400);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+
+
+    transition: background-color 0.1s;
+    height: 2.9rem;
+}
+
+.commentForm button[type=submit]:hover {
+    background: var(--purple-400);
+
+}
+
+
+.commentForm button {
+    background: var(--purple-400);
+}
+
+.commentForm footer {
+    visibility: hidden; 
+    max-height: 0;
+}
+
+.commentForm:focus-within footer {
+    visibility: visible;
+    max-height: none;
+}
