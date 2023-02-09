@@ -4,7 +4,7 @@
     padding: 0 1rem;
 
     display: flex;
-    grid-template-columns: 256px 1fr;
+    grid-template-columns: 256px fr;
     gap: 2rem;
     align-items: flex-start;
     justify-content: flex-start;
@@ -15,7 +15,8 @@
  }
 
  .wrapper main {
-    margin-left: 10rem;
+    /* margin-left: 10rem; */
+    /* margin-right: 10rem; */
  }
 
 
