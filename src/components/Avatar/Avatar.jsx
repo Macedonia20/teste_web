@@ -2,7 +2,7 @@ import styles from './Avatar.module.css'
 
 export function Avatar(props) {
     // Essa é a logica usada na variavel abaixo
-    // Se a  EuEscolhoaPropiedade for diferente de false quer dizer que ele tem borda
+    // Se a EuEscolhoaPropiedade for diferente de false quer dizer que ele tem borda
       
     const EuEscolhoaPropiedade = props.EuEscolhoaPropiedade != false;
 

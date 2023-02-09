@@ -23,13 +23,13 @@
 
 * {
     margin: 0;
-    poadding: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 
 body {
-    background: var(--gray-900);
+    background: var(--gray-100);
     color: var(--gray-300);
     -webkit-font-smoothing: antialiased;
 }

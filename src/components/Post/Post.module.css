@@ -1,34 +1,27 @@
 .post + post {
     margin-top: 3rem;
     margin-bottom: 3rem;
-    align-items: center;
-
 }
 
 .post {
-    background: var(--gray-800);
-    border-radius: 8px;
+    background: #343434;
     padding:2.5rem;
-    /* overflow-y: scroll; */
     margin-bottom: 0.75rem;
-    width: 516px;
-  height: 353px;
-  /* margin: 40px 425px 56px;
-  padding: 24px;
-  border-radius: 3px;
-  border: solid 1px #3b3b3b;
-  background-color: #313131; */
-
+    height: 100%;
 }
 
 .content {
-    line-height: 1.6;
-    color: var(--gray-300);
-    margin-top: 1.5rem;
+    height: 100%;
+    margin: 48px 192px 0px;
+    padding: 24px;
+    border-radius: 3px;
+    border: solid 1px #3b3b3b;
+    background-color: #313131;
 }
 
 .content p {
     margin-top: 1rem;
+    margin-left: 4rem;
 }
 
 .content a {
@@ -71,19 +64,83 @@
 
 .authorInfo strong {
     display: block;
-    color: var(--gray-100);
-    line-height: 1.6;
+    font-size: 0.875rem;
+    color: var(--gray-400);
+    margin-left: 4rem;
+    
+
 }
 
 .authorInfo span {
     display: block;
     font-size: 0.875rem;
     color: var(--gray-400);
+    margin-top: 2rem;
+    margin-left: 4rem;
+
 }
 
 
 
+.commentForm {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top:1.5rem;
+    border-top: 1px solid var(--gray-600);
+}
 
+.commentForm > strong {
+    line-height: 1.6;
+    color: var(--gray-100);
+}
+
+.commentForm textarea {
+    width: 100%;
+    background-color: var(--gray-900);
+    border: 0;
+    resize: none;
+    height: 6rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 1.4;
+    margin-top: 1rem;
+}
+
+.commentForm button[type=submit] {
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--purple-400);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+
+
+    transition: background-color 0.1s;
+    height: 2.9rem;
+}
+
+.commentForm button[type=submit]:hover {
+    background: var(--purple-400);
+
+}
+
+
+.commentForm button {
+    background: var(--purple-400);
+}
+
+.commentForm footer {
+    visibility: hidden; 
+    max-height: 0;
+}
+
+.commentForm:focus-within footer {
+    visibility: visible;
+    max-height: none;
+}
 
 
 .commentList {
