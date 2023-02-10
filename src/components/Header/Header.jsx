@@ -7,7 +7,6 @@ export function Header() {
        
         <header className={styles.header}>
            <img src={logoBuild} alt="Logo builddbox" />
-
         </header>
     );
 }

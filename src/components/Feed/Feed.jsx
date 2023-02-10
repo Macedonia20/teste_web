@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ThumbsUp, Trash } from "phosphor-react";
 import { Avatar } from '../Avatar/Avatar'
 
-import styles from './Comment.module.css'
+import styles from './Feed.module.css'
 import imgProfile from '../../assets/nasa.webp'
 
 export function Feed({ content, deleteFeed }) {
@@ -12,24 +12,27 @@ export function Feed({ content, deleteFeed }) {
 
     function handleDeleteFeed() {
         deleteFeed(content)
-    }
+    };
 
-    function handleLikeComment() {
+    function handleLikeFeed() {
         setCountLike((state) => {
             return state + 1
-        })
-    }
+        });
+    };
 
     return (
-        <div className={styles.comment}>
+        <div className={styles.feed}>
             <Avatar propertyPhoto={false} src={imgProfile} />
 
-            <div className={styles.commentBox}>
-                <div className={styles.commentContent}>
+            <div className={styles.feedBox}>
+                <div className={styles.feedContent}>
                     <header>
                         <div className={styles.authorAndTime}>
+
                             <strong>Matheus Macedo</strong>
+
                             <time title="" dateTime="">Publicado cerca de 2h</time>
+
                         </div>
 
                         <button onClick={handleDeleteFeed} title="Deletar comentário">
@@ -38,11 +41,12 @@ export function Feed({ content, deleteFeed }) {
                     </header>
 
                     <p>{content}</p>
+                    
                 </div>
                 <footer>
-                    <button onClick={handleLikeComment}>
+                    <button onClick={handleLikeFeed}>
                         <ThumbsUp />
-                        Aplaudir <span>{countLike}</span>
+                        Like <span>{countLike}</span>
                     </button>
                 </footer>
             </div>

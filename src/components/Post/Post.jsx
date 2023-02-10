@@ -1,12 +1,13 @@
-import { Feed } from '../Comments/Comment'
+import { Feed } from '../Feed/Feed'
 import { Avatar } from '../Avatar/Avatar'
 
 import styles from './Post.module.css'
 import { useState } from 'react';
 
-export function Post({ author, publishedAt, content, deleteFeed }) {
+export function Post({ author, content, deleteFeed }) {
 
-    const [feed, setCreateFeed] = useState(["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus."])
+    const [feed, setCreateFeed] = useState([
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus."])
 
     const [newFeed, setNewFeed] = useState('')
 
@@ -22,18 +23,18 @@ export function Post({ author, publishedAt, content, deleteFeed }) {
         setNewFeed(event.target.value);
     }
 
-    function deleteFeed(commentToDeletele) {
-       const commentsWithoutDeleteOne = feed.filter(feed => {
-        return feed != commentToDeletele
+    function deleteFeed(feedToDeletele) {
+       const feedsWithoutDeleteOne = feed.filter(feed => {
+        return feed != feedToDeletele
        })
-       setCreateFeed(commentsWithoutDeleteOne);
+       setCreateFeed(feedsWithoutDeleteOne);
     }
 
     function handleNewFeedtInvalid() {
         event.target.setCustomValidity('É preciso fazer um comentario')
     }
     
-    const isNewCommentEmpty = newFeed.length === 0;
+    const isNewFeedEmpty = newFeed.length === 0;
     
     return (
         <article className={styles.post}>
@@ -46,7 +47,7 @@ export function Post({ author, publishedAt, content, deleteFeed }) {
                 />
 
                 <textarea 
-                    name="comment"
+                    name="feed"
                     placeholder="Mensagem"
                     onChange={newFeedChenge}
                     value={newFeed}
@@ -56,20 +57,20 @@ export function Post({ author, publishedAt, content, deleteFeed }) {
                 <footer>
                     <button 
                      type="submit"
-                     disabled={isNewCommentEmpty}
+                     disabled={isNewFeedEmpty}
                     >
                      Publicar
                     </button>
                 </footer>
             </form>
 
-            <div className={styles.commentList}>
+            <div className={styles.feedList}>
                 
-                {feed.map(comment => {
+                {feed.map(feed => {
                     return (
                         <Feed 
-                            key={comment} 
-                            content={comment}
+                            key={feed} 
+                            content={feed}
                             deleteFeed={deleteFeed}
                         />
                     )
@@ -78,12 +79,12 @@ export function Post({ author, publishedAt, content, deleteFeed }) {
            
             <div className={styles.feedForm}>
                
-                 <Avatar src={author.avatar} />
+                <Avatar src={author.avatar} />
 
-                    <div className={styles.authorInfo}>
-                        <span>{author.role}</span>
-                        <strong>{author.name}</strong>
-                    </div>
+                <div className={styles.authorInfo}>
+                    <span>{author.role}</span>
+                    <strong>{author.name}</strong>
+                </div>
             
                 {content.map(line => {
 

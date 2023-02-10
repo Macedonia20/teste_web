@@ -35,7 +35,6 @@
     color: var(--green-400);
 }
 
-
 .post > header {
     display: flex;
     align-items: center;
@@ -45,19 +44,6 @@
 .post > header time {
     font-size: 0.875rem;
     color: var(--gray-400);
-   
-}
-
-.feedForm header button {
-    background: transparent;
-    border: 0;
-    color: var(--gray-400);
-    cursor: pointer;
-    border-radius: 2px;
-}
-
-.commentContent header button:hover {
-    color: var(--red-500);
 }
 
 .author {
@@ -81,8 +67,6 @@
     line-height: 2.6rem;
 
 }
-
-
 
 .feedForm {
     height: 100%;
@@ -124,16 +108,12 @@
     padding: 1rem 2.5rem;
     margin-left:  30rem;
     margin-top: 1rem;
-
     border-radius: 8px;
     border: 0;
     background: var(--green-400);
     color: var(--white);
     font-weight: bold;
     cursor: pointer;
-    
-
-
     transition: background-color 0.1s;
     height: 2.9rem;
 }
@@ -159,7 +139,7 @@
 }
 
 
-.commentList {
+.feedList {
     margin-top: 2rem;
 }
 
