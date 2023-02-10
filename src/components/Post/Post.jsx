@@ -1,6 +1,4 @@
-import { Header } from '../Header/Header/'
-
-
+import { Trash } from "phosphor-react";
 import { format, formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
@@ -11,7 +9,7 @@ import { Avatar } from '../Avatar/Avatar'
 import styles from './Post.module.css'
 import { useState } from 'react';
 
-export function Post({ author, publishedAt, content }) {
+export function Post({ author, publishedAt, content, deleteComment }) {
 
     const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'as' HH:mm'h'", {
         locale: ptBR,
@@ -50,17 +48,29 @@ export function Post({ author, publishedAt, content }) {
         event.target.setCustomValidity('É preciso fazer um comentario')
     }
 
+    function handleDeleteComment() {
+        deleteComment(content)
+    }
+
     const isNewCommentEmpty = newComment.length === 0;
     
     return (
         <article className={styles.post}>
-            
-             <form onSubmit={CreateNewComment} className={styles.commentForm}>
-                <strong>Deixe seu comentário</strong>
+            <form onSubmit={CreateNewComment} className={styles.commentForm}>
+             <Avatar src={author.avatar} />
 
-                <textarea
+                <input
                     name="comment"
-                    placeholder="Deixe um comentário..."
+                    placeholder="Digite seu nome"
+                    onChange={newCommentChenge}
+                    value={newComment}
+                    onInvalid={handleNewCommentInvalid}
+                    required
+                />
+
+                <textarea 
+                    name="comment"
+                    placeholder="Mensagem"
                     onChange={newCommentChenge}
                     value={newComment}
                     onInvalid={handleNewCommentInvalid}
@@ -76,6 +86,8 @@ export function Post({ author, publishedAt, content }) {
                 </footer>
             </form>
 
+           
+
             <div className={styles.commentList}>
                 
                 {comment.map(comment => {
@@ -88,23 +100,15 @@ export function Post({ author, publishedAt, content }) {
                     )
                 })}
             </div>
-
-
-            <header>
-                <div className={styles.author}>
-                <Avatar src={author.avatar} />
-                  
-                </div>
-                <time 
-                    title={publishedDateFormatted} 
-                    dateTime={publishedAt.toISOString()}
-                >
-                    {publishedDateRelativeToNow}
-                        
-                </time>
-            </header>
-
-            <div className={styles.content}>
+           
+            <div className={styles.commentForm}>
+                <header>
+                    <button onClick={handleDeleteComment} title="Deletar post">
+                        <Trash  size={20} />
+                    </button>
+                </header>
+               
+                 <Avatar src={author.avatar} />
             
                 {content.map(line => {
 
@@ -115,6 +119,8 @@ export function Post({ author, publishedAt, content }) {
                         return <p key={line.content}><a target="blank" href={line.content}>{line.content}</a></p>
                     }
                 })}
+
+                    
 
                     <div className={styles.authorInfo}>
                         <span>{author.role}</span>
