@@ -42,6 +42,13 @@
     color: var(--gray-400);
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
 .commentContent  header button {
     background: transparent;
     border: 0;

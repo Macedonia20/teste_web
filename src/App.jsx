@@ -25,8 +25,7 @@ export function App() {
     
   
       content: [
-        {type: 'paragraph', content: 'Esse foi meu primeiro projeto, foi um projeto bem simples com o foco em dispositvo mobile, nele é possivel acessar as minhas redes apenas com um click. As tecnologias usadas foram, HTML, CSS E JS! '},
-        {type: 'link', content:'https://macedonia20.github.io/Cracha-nlw/'}, 
+        {type: 'paragraph', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus.'},
       ],
       publishedAt: new Date('2021-11-22 21:00:00'),
   
@@ -44,7 +43,6 @@ export function App() {
       
         <main>
           {<Header /> }
-          
           
           {posts.map(post => {
             return (

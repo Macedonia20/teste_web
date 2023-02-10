@@ -27,7 +27,6 @@ export function Comment({ content, deleteComment }) {
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
                     <header>
-                    
                         <div className={styles.authorAndTime}>
                             <strong>Usuário</strong>
                             <time title="" dateTime="">Publicado cerca de 2h</time>
@@ -36,7 +35,6 @@ export function Comment({ content, deleteComment }) {
                         <button onClick={handleDeleteComment} title="Deletar comentário">
                             <Trash  size={20} />
                         </button>
-                        
                     </header>
 
                     <p>{content}</p>

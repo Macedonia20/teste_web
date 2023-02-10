@@ -20,7 +20,7 @@ export function Post({ author, publishedAt, content, deleteComment }) {
         addSuffix: true,
     })
 
-    const [comment, setCreateComment] = useState(["Muito bom parabéns"])
+    const [comment, setCreateComment] = useState(["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus."])
 
     const [newComment, setNewComment] = useState('')
 
@@ -102,13 +102,13 @@ export function Post({ author, publishedAt, content, deleteComment }) {
             </div>
            
             <div className={styles.commentForm}>
-                <header>
-                    <button onClick={handleDeleteComment} title="Deletar post">
-                        <Trash  size={20} />
-                    </button>
-                </header>
                
                  <Avatar src={author.avatar} />
+
+                    <div className={styles.authorInfo}>
+                        <span>{author.role}</span>
+                        <strong>{author.name}</strong>
+                    </div>
             
                 {content.map(line => {
 
@@ -122,10 +122,7 @@ export function Post({ author, publishedAt, content, deleteComment }) {
 
                     
 
-                    <div className={styles.authorInfo}>
-                        <span>{author.role}</span>
-                        <strong>{author.name}</strong>
-                    </div>
+                    
            </div>
             
 
