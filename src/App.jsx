@@ -1,16 +1,10 @@
 import { Header } from './components/Header/Header'
 import { Post } from './components/Post/Post'
-import { Comment } from './components/Comments/Comment'
 
-
-
-
-import imgPerfil from './assets/perfil.jpeg'
+import imgPerfil from './assets/nasa.webp'
 import styles from './App.module.css'
 
 import './global.css'
-
-
 
 export function App() {
 
@@ -20,7 +14,7 @@ export function App() {
       author: {
         avatar: imgPerfil,
         name: 'Matheus Macedo',
-        role: 'Enviado por'
+        role: 'Publicado cerca de 2h',
       },
     
   
@@ -28,14 +22,8 @@ export function App() {
         {type: 'paragraph', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus.'},
       ],
       publishedAt: new Date('2021-11-22 21:00:00'),
-  
-      
     }
-    
-  
   ];
-
- 
 
   return (
     <div>

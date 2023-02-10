@@ -6,7 +6,7 @@ import { Avatar } from '../Avatar/Avatar'
 import styles from './Comment.module.css'
 import imgProfile from '../../assets/nasa.webp'
 
-export function Comment({ content, deleteComment }) {
+export function Feed({ content, deleteComment }) {
 
     const [countLike, setCountLike] = useState(0)
 
@@ -22,13 +22,13 @@ export function Comment({ content, deleteComment }) {
 
     return (
         <div className={styles.comment}>
-            <Avatar EuEscolhoaPropiedade={false} src={imgProfile} />
+            <Avatar propertyPhoto={false} src={imgProfile} />
 
             <div className={styles.commentBox}>
                 <div className={styles.commentContent}>
                     <header>
                         <div className={styles.authorAndTime}>
-                            <strong>Usuário</strong>
+                            <strong>Matheus Macedo</strong>
                             <time title="" dateTime="">Publicado cerca de 2h</time>
                         </div>
 

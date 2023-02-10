@@ -27,12 +27,12 @@
 
 .content a {
     font-weight: bold;
-    color: var(--purple-400);   
+    color: var(--green-400);   
     text-decoration: none;
 }
 
 .content a:hover {
-    color: var(--purple-400);
+    color: var(--green-400);
 }
 
 
@@ -121,14 +121,17 @@
 }
 
 .commentForm button[type=submit] {
-    padding: 1rem 1.5rem;
+    padding: 1rem 2.5rem;
+    margin-left:  30rem;
     margin-top: 1rem;
+
     border-radius: 8px;
     border: 0;
-    background: var(--purple-400);
+    background: var(--green-400);
     color: var(--white);
     font-weight: bold;
     cursor: pointer;
+    
 
 
     transition: background-color 0.1s;
@@ -136,13 +139,13 @@
 }
 
 .commentForm button[type=submit]:hover {
-    background: var(--purple-400);
+    background: var(--green-400);
 
 }
 
 
 .commentForm button {
-    background: var(--purple-400);
+    background: var(--green-400);
 }
 
 .commentForm footer {

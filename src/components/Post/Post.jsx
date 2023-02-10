@@ -1,24 +1,10 @@
-import { Trash } from "phosphor-react";
-import { format, formatDistanceToNow } from 'date-fns';
-import ptBR from 'date-fns/locale/pt-BR';
-
-
-import { Comment } from '../Comments/Comment'
+import { Feed } from '../Comments/Comment'
 import { Avatar } from '../Avatar/Avatar'
 
 import styles from './Post.module.css'
 import { useState } from 'react';
 
 export function Post({ author, publishedAt, content, deleteComment }) {
-
-    const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'as' HH:mm'h'", {
-        locale: ptBR,
-    })
-    
-    const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
-        locale: ptBR,
-        addSuffix: true,
-    })
 
     const [comment, setCreateComment] = useState(["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus."])
 
@@ -47,11 +33,7 @@ export function Post({ author, publishedAt, content, deleteComment }) {
     function handleNewCommentInvalid() {
         event.target.setCustomValidity('É preciso fazer um comentario')
     }
-
-    function handleDeleteComment() {
-        deleteComment(content)
-    }
-
+    
     const isNewCommentEmpty = newComment.length === 0;
     
     return (
@@ -60,12 +42,8 @@ export function Post({ author, publishedAt, content, deleteComment }) {
              <Avatar src={author.avatar} />
 
                 <input
-                    name="comment"
-                    placeholder="Digite seu nome"
-                    onChange={newCommentChenge}
-                    value={newComment}
-                    onInvalid={handleNewCommentInvalid}
-                    required
+                    placeholder="Matheus Macedo"
+                    disabled
                 />
 
                 <textarea 
@@ -86,13 +64,11 @@ export function Post({ author, publishedAt, content, deleteComment }) {
                 </footer>
             </form>
 
-           
-
             <div className={styles.commentList}>
                 
                 {comment.map(comment => {
                     return (
-                        <Comment 
+                        <Feed 
                             key={comment} 
                             content={comment}
                             deleteComment={deleteComment}
@@ -119,13 +95,7 @@ export function Post({ author, publishedAt, content, deleteComment }) {
                         return <p key={line.content}><a target="blank" href={line.content}>{line.content}</a></p>
                     }
                 })}
-
-                    
-
-                    
            </div>
-            
-
            
         </article>
     )
