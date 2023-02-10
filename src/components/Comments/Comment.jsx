@@ -6,12 +6,12 @@ import { Avatar } from '../Avatar/Avatar'
 import styles from './Comment.module.css'
 import imgProfile from '../../assets/nasa.webp'
 
-export function Feed({ content, deleteComment }) {
+export function Feed({ content, deleteFeed }) {
 
     const [countLike, setCountLike] = useState(0)
 
-    function handleDeleteComment() {
-        deleteComment(content)
+    function handleDeleteFeed() {
+        deleteFeed(content)
     }
 
     function handleLikeComment() {
@@ -32,7 +32,7 @@ export function Feed({ content, deleteComment }) {
                             <time title="" dateTime="">Publicado cerca de 2h</time>
                         </div>
 
-                        <button onClick={handleDeleteComment} title="Deletar comentário">
+                        <button onClick={handleDeleteFeed} title="Deletar comentário">
                             <Trash  size={20} />
                         </button>
                     </header>

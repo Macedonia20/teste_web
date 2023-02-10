@@ -4,41 +4,40 @@ import { Avatar } from '../Avatar/Avatar'
 import styles from './Post.module.css'
 import { useState } from 'react';
 
-export function Post({ author, publishedAt, content, deleteComment }) {
+export function Post({ author, publishedAt, content, deleteFeed }) {
 
-    const [comment, setCreateComment] = useState(["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus."])
+    const [feed, setCreateFeed] = useState(["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis ligula vel velit scelerisque iaculis. Nam mattis justo id orci commodo, eu tempus purus cursus."])
 
-    const [newComment, setNewComment] = useState('')
+    const [newFeed, setNewFeed] = useState('')
 
-    function CreateNewComment() {
+    function CreateNewFeed() {
         event.preventDefault()
 
-        setCreateComment([...comment, newComment])
-        setNewComment('')
+        setCreateFeed([...feed, newFeed])
+        setNewFeed('')
     }
 
-    function newCommentChenge() {
-
-        setNewComment(event.target.value)
-        event.target.setCustomValidity('')
+    function newFeedChenge() {
+        event.target.setCustomValidity('');
+        setNewFeed(event.target.value);
     }
 
-    function deleteComment(commentToDeletele) {
-       const commentsWithoutDeleteOne = comment.filter(comment => {
-        return comment != commentToDeletele
+    function deleteFeed(commentToDeletele) {
+       const commentsWithoutDeleteOne = feed.filter(feed => {
+        return feed != commentToDeletele
        })
-       setCreateComment(commentsWithoutDeleteOne);
+       setCreateFeed(commentsWithoutDeleteOne);
     }
 
-    function handleNewCommentInvalid() {
+    function handleNewFeedtInvalid() {
         event.target.setCustomValidity('É preciso fazer um comentario')
     }
     
-    const isNewCommentEmpty = newComment.length === 0;
+    const isNewCommentEmpty = newFeed.length === 0;
     
     return (
         <article className={styles.post}>
-            <form onSubmit={CreateNewComment} className={styles.commentForm}>
+            <form onSubmit={CreateNewFeed} className={styles.feedForm}>
              <Avatar src={author.avatar} />
 
                 <input
@@ -49,10 +48,10 @@ export function Post({ author, publishedAt, content, deleteComment }) {
                 <textarea 
                     name="comment"
                     placeholder="Mensagem"
-                    onChange={newCommentChenge}
-                    value={newComment}
-                    onInvalid={handleNewCommentInvalid}
-                    required
+                    onChange={newFeedChenge}
+                    value={newFeed}
+                    onInvalid={handleNewFeedtInvalid}
+                    required 
                 />
                 <footer>
                     <button 
@@ -66,18 +65,18 @@ export function Post({ author, publishedAt, content, deleteComment }) {
 
             <div className={styles.commentList}>
                 
-                {comment.map(comment => {
+                {feed.map(comment => {
                     return (
                         <Feed 
                             key={comment} 
                             content={comment}
-                            deleteComment={deleteComment}
+                            deleteFeed={deleteFeed}
                         />
                     )
                 })}
             </div>
            
-            <div className={styles.commentForm}>
+            <div className={styles.feedForm}>
                
                  <Avatar src={author.avatar} />
 

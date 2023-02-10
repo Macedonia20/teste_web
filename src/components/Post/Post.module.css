@@ -48,7 +48,7 @@
    
 }
 
-.commentForm header button {
+.feedForm header button {
     background: transparent;
     border: 0;
     color: var(--gray-400);
@@ -84,7 +84,7 @@
 
 
 
-.commentForm {
+.feedForm {
     height: 100%;
     margin: 48px 192px 0px;
     padding: 24px;
@@ -94,7 +94,7 @@
 
 }
 
-.commentForm input {
+.feedForm input {
     width: 100%;
     background-color: var(--gray-700);
     border: 0;
@@ -107,7 +107,7 @@
     margin-top: 1rem;
 }
 
-.commentForm textarea {
+.feedForm textarea {
     width: 100%;
     background-color: var(--gray-700);
     border: 0;
@@ -120,7 +120,7 @@
     margin-top: 1rem;
 }
 
-.commentForm button[type=submit] {
+.feedForm button[type=submit] {
     padding: 1rem 2.5rem;
     margin-left:  30rem;
     margin-top: 1rem;
@@ -138,22 +138,22 @@
     height: 2.9rem;
 }
 
-.commentForm button[type=submit]:hover {
+.feedForm button[type=submit]:hover {
     background: var(--green-400);
 
 }
 
 
-.commentForm button {
+.feedForm button {
     background: var(--green-400);
 }
 
-.commentForm footer {
+.feedForm footer {
     visibility: hidden; 
     max-height: 0;
 }
 
-.commentForm:focus-within footer {
+.feedForm:focus-within footer {
     visibility: visible;
     max-height: none;
 }
